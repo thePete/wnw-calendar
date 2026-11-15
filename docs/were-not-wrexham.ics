@@ -1,0 +1,88 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//were-not-wrexham-ics//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:We're Not Wrexham ⚽
+X-WR-CALDESC:Mid State Sports Leagues rec soccer games (auto-updated)
+X-WR-TIMEZONE:America/Chicago
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:tm-h202611052304071005310107639e244@were-not-wrexham-ics
+DTSTAMP:20261115T050140Z
+DTSTART:20261112T034500Z
+DTEND:20261112T043500Z
+SUMMARY:⚽ WNW 5–6 Wednesday Meows · Field 3
+LOCATION:Boost Fit Club\, 11 Vaughns Gap Rd\, Nashville\, TN 37205
+DESCRIPTION:Opponent: Wednesday Meows (Black)\nWhere: Boost Fit Club - Fiel
+ d 3\nLATE Fall Wednesday Soccer · Co-Ed Indoor\nGame P19\nSchedule: https
+ ://midstatesportsleagues.com/soccer/late-fall-wednesday-soccer/
+END:VEVENT
+BEGIN:VEVENT
+UID:tm-h2026110523185666227b50286a8824a@were-not-wrexham-ics
+DTSTAMP:20261115T050140Z
+DTSTART:20261119T025000Z
+DTEND:20261119T034000Z
+SUMMARY:⚽ WNW (#8) vs AFC Nashville City United (#12) · Field 4
+LOCATION:Boost Fit Club\, 11 Vaughns Gap Rd\, Nashville\, TN 37205
+DESCRIPTION:Opponent: AFC Nashville City United\nWhere: Boost Fit Club - Fi
+ eld 4\nLATE Fall Wednesday Soccer · Co-Ed Indoor\nGame P12\nSchedule: htt
+ ps://midstatesportsleagues.com/soccer/late-fall-wednesday-soccer/
+END:VEVENT
+BEGIN:VEVENT
+UID:tm-h202611052304070158a8b19f740b94e@were-not-wrexham-ics
+DTSTAMP:20261115T050140Z
+DTSTART:20261203T034500Z
+DTEND:20261203T043500Z
+SUMMARY:⚽ WNW (#8) vs Balls to the Walls (#7) · Field 3
+LOCATION:Boost Fit Club\, 11 Vaughns Gap Rd\, Nashville\, TN 37205
+DESCRIPTION:Opponent: Balls to the Walls (Red)\nWhere: Boost Fit Club - Fie
+ ld 3\nLATE Fall Wednesday Soccer · Co-Ed Indoor\nGame P10\nSchedule: http
+ s://midstatesportsleagues.com/soccer/late-fall-wednesday-soccer/
+END:VEVENT
+BEGIN:VEVENT
+UID:tm-h20261105231856723886558df52b345@were-not-wrexham-ics
+DTSTAMP:20261115T050140Z
+DTSTART:20261210T010000Z
+DTEND:20261210T015000Z
+SUMMARY:⚽ WNW (#8) vs AFC Nashville City United (#12) · Field 3
+LOCATION:Boost Fit Club\, 11 Vaughns Gap Rd\, Nashville\, TN 37205
+DESCRIPTION:Opponent: AFC Nashville City United\nWhere: Boost Fit Club - Fi
+ eld 3\nLATE Fall Wednesday Soccer · Co-Ed Indoor\nGame P19\nSchedule: htt
+ ps://midstatesportsleagues.com/soccer/late-fall-wednesday-soccer/
+END:VEVENT
+BEGIN:VEVENT
+UID:tm-h202611102037373259c9332ed2d3c4c@were-not-wrexham-ics
+DTSTAMP:20261115T050140Z
+DTSTART:20261210T015500Z
+DTEND:20261210T024500Z
+SUMMARY:⚽ WNW (#8) vs Unsupervised Adults (#6) · Field 2
+LOCATION:Boost Fit Club\, 11 Vaughns Gap Rd\, Nashville\, TN 37205
+DESCRIPTION:Opponent: Unsupervised Adults\nWhere: Boost Fit Club - Field 2\
+ nLATE Fall Wednesday Soccer · Co-Ed Indoor\nGame P222\nSchedule: https://
+ midstatesportsleagues.com/soccer/late-fall-wednesday-soccer/
+END:VEVENT
+BEGIN:VEVENT
+UID:tm-h202611052318567418cf1e7b1a77c44@were-not-wrexham-ics
+DTSTAMP:20261115T050140Z
+DTSTART:20261217T015500Z
+DTEND:20261217T024500Z
+SUMMARY:⚽ WNW (#8) vs Nashville Opossums (#10) · Field 4
+LOCATION:Boost Fit Club\, 11 Vaughns Gap Rd\, Nashville\, TN 37205
+DESCRIPTION:Opponent: Nashville Opossums\nWhere: Boost Fit Club - Field 4\n
+ LATE Fall Wednesday Soccer · Co-Ed Indoor\nGame P21\nSchedule: https://mi
+ dstatesportsleagues.com/soccer/late-fall-wednesday-soccer/
+END:VEVENT
+BEGIN:VEVENT
+UID:tm-h20261105231856846c896ff379d2f41@were-not-wrexham-ics
+DTSTAMP:20261115T050140Z
+DTSTART:20270107T010000Z
+DTEND:20270107T015000Z
+SUMMARY:⚽ WNW (#8) vs Top Gun (#11) · Field 3
+LOCATION:Boost Fit Club\, 11 Vaughns Gap Rd\, Nashville\, TN 37205
+DESCRIPTION:Opponent: Top Gun (Green)\nWhere: Boost Fit Club - Field 3\nLAT
+ E Fall Wednesday Soccer · Co-Ed Indoor\nGame P33\nSchedule: https://midst
+ atesportsleagues.com/soccer/late-fall-wednesday-soccer/
+END:VEVENT
+END:VCALENDAR
