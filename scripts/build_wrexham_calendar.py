@@ -335,7 +335,7 @@ def main():
         f"X-WR-CALNAME:{esc(TEAM_NAME)} ⚽",
         "X-WR-CALDESC:Mid State Sports Leagues rec soccer games (auto-updated)",
         "X-WR-TIMEZONE:America/Chicago",
-        "REFRESH-INTERVAL;VALUE=DURATION:PT6H", "X-PUBLISHED-TTL:PT6H",
+        "REFRESH-INTERVAL;VALUE=DURATION:PT12H", "X-PUBLISHED-TTL:PT12H",
     ]
     body = "\r\n".join(fold(l) for l in head) + "\r\n"
     body += "".join(e + "\r\n" for _, e in events) + "END:VCALENDAR\r\n"

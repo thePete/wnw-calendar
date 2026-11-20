@@ -2,7 +2,7 @@ name: Update WNW calendar
 
 on:
   schedule:
-    - cron: "43 */6 * * *"   # every 6 hours
+    - cron: "13 12 * * *"   # daily, 6:13 AM Central (7:13 during daylight time)
   workflow_dispatch:
   push:
     branches: [main]

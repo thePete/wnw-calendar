@@ -1,6 +1,6 @@
 # We're Not Wrexham ⚽ calendar
 
-Auto-updating calendar of We're Not Wrexham's Mid State Sports Leagues rec soccer games, rebuilt every 6 hours by GitHub Actions.
+Auto-updating calendar of We're Not Wrexham's Mid State Sports Leagues rec soccer games, rebuilt every morning by GitHub Actions.
 
 ## Subscribe
 
