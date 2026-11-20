@@ -21,6 +21,7 @@ Needs: beautifulsoup4, lxml.
 import os
 import re
 import sys
+import time
 import unicodedata
 import urllib.request
 from datetime import datetime, timedelta, timezone
@@ -50,10 +51,18 @@ VENUE_ADDRESSES = {
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"
 
 
-def fetch(url):
+def fetch(url, attempts=3):
+    """GET a page, retrying a couple of times: the league site sometimes stalls."""
     req = urllib.request.Request(url, headers={"User-Agent": UA})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return r.read().decode("utf-8", errors="replace")
+    for i in range(attempts):
+        try:
+            with urllib.request.urlopen(req, timeout=45) as r:
+                return r.read().decode("utf-8", errors="replace")
+        except OSError as e:  # timeouts, connection resets, HTTP errors
+            if i == attempts - 1:
+                raise
+            print(f"retrying {url} after error: {e}", file=sys.stderr)
+            time.sleep(15 * (i + 1))
 
 
 def norm(name):
@@ -66,7 +75,18 @@ def league_pages():
     override = [u.strip() for u in os.environ.get("LEAGUE_URLS", "").split(",") if u.strip()]
     if override or LEAGUE_URLS:
         return override or LEAGUE_URLS
-    html = fetch(SOCCER_INDEX)
+    try:
+        html = fetch(SOCCER_INDEX)
+    except OSError as e:
+        # Fall back to the league pages the current calendar already came from.
+        known = []
+        if os.path.exists(OUTPUT):
+            text = open(OUTPUT, encoding="utf-8").read().replace("\r\n ", "").replace("\n ", "")
+            known = re.findall(r"https://midstatesportsleagues\.com/soccer/[a-z0-9-]+/", text)
+        if not known:
+            raise
+        print(f"soccer index unreachable ({e}); using known league pages", file=sys.stderr)
+        return sorted(set(known))
     pages = sorted(set(re.findall(r"https://midstatesportsleagues\.com/soccer/[a-z0-9-]+/", html)))
     print(f"found {len(pages)} soccer league pages", file=sys.stderr)
     return pages
@@ -259,7 +279,7 @@ def past_events_from_existing(keep_out_uids):
     """Keep already-played games from the current file so old seasons stay in the calendar."""
     if not os.path.exists(OUTPUT):
         return []
-    text = open(OUTPUT, encoding="utf-8").read().replace("\r\n ", "")
+    text = open(OUTPUT, encoding="utf-8").read().replace("\r\n ", "").replace("\n ", "")
     kept, now = [], datetime.now(timezone.utc)
     for block in re.findall(r"BEGIN:VEVENT\r?\n.*?END:VEVENT", text, re.S):
         uid = re.search(r"^UID:(.*)$", block, re.M)
@@ -326,4 +346,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except OSError as e:
+        # League site down or slow: keep the current calendar and try again next run,
+        # instead of failing the workflow (and emailing) over a brief outage.
+        print(f"::warning::League site unreachable, calendar left unchanged: {e}")
